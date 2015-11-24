@@ -159,13 +159,13 @@ var projects = {
 			"title" : "Word Kitten: Intelligent Pathfinding and Finite State Machine",
 			"description" : "Intro to Artificial Intelligence at University of W est Florida",
 			"dates" : "2014",
-			"images" : "images/Pathfinding_Game-1170x396.png"
+			"images" : ["images/Pathfinding_Game-1170x396.png"]
 		},
 		{
 			"title" : "Project P1: Build a Responsive Portfolio Site",
 			"description" : "Project created upon completion of Intro to HTML and CSS, Responsive Web Design Fundementals, and Responsive Images for Udacity Front-end Web Developer Nanodegree",
 			"dates" : "2015",
-			"images" : "images/website_snip.png"
+			"images" : ["images/website_snip.png"]
 		}
 	]
 };
@@ -176,7 +176,7 @@ projects.display = function() {
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
 		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[0]);
 		$(".project-entry:last").append(formattedProjectTitle);
 		$(".project-entry:last").append(formattedProjectDates);
 		$(".project-entry:last").append(formattedProjectDescription);
