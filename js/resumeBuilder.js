@@ -10,14 +10,13 @@ var bio = {
 		"twitter" : "galaxode",
 		"location" : "New York City"
 	},
-	"picture URL" : "images/hedgehog.jpg",
-	"welcome message" : "Greetings. This is my interactive web-resume, which is a project for the Front-End Web Developer Nanodegree program at Udacity. Please take a look below at some of my work experiences, education, projects, and Google map of places I have worked. Cheers!",
+	"biopic" : "images/hedgehog.jpg",
+	"welcomeMessage" : "Greetings. This is my interactive web-resume, which is a project for the Front-End Web Developer Nanodegree program at Udacity. Please take a look below at some of my work experiences, education, projects, and Google map of places I have worked. Cheers!",
 	"skills" : ["HTML/CSS", "Bootstrap", "Javascript", "jQuery", "Java", "C#"]
 };
 
 var work = {
-	"jobs" : [
-		{
+	"jobs" : [{
 			"employer" : "Group Health Solutions Inc. and SDL Brokerage Inc.",
 			"title" : "Director of Operations",
 			"location" : "New York City, New York",
@@ -57,8 +56,7 @@ var work = {
 
 
 var education = {
-	"schools" : [
-		{
+	"schools" : [{
 			"name" : "Florida State University",
 			"location" : "Tallahassee, Florida",
 			"degree" : "B.S.",
@@ -91,8 +89,7 @@ var education = {
 			"url" : "www.fiu.edu"
 		}
 	],
-	"onlineCourses" : [
-		{
+	"onlineCourses" : [{
 		  "title" : "Intro To HTML and CSS",
 			"school" : "Udacity",
 			"dates" : "2015",
@@ -158,14 +155,13 @@ education.display = function() {
 
 
 var projects = {
-	"school projects" : [
-		{
+	"projects" : [{
 			"title" : "Word Kitten: Intelligent Pathfinding and Finite State Machine",
 			"description" : "Intro to Artificial Intelligence at University of W est Florida",
 			"dates" : "2014",
 			"images" : "images/Pathfinding_Game-1170x396.png"
 		},
-			{
+		{
 			"title" : "Project P1: Build a Responsive Portfolio Site",
 			"description" : "Project created upon completion of Intro to HTML and CSS, Responsive Web Design Fundementals, and Responsive Images for Udacity Front-end Web Developer Nanodegree",
 			"dates" : "2015",
@@ -176,11 +172,11 @@ var projects = {
 
 projects.display = function() {
 	$("#projects").append(HTMLprojectStart);
-	for (project in projects["school projects"]) {
-		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects["school projects"][project].title);
-		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects["school projects"][project].dates);
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects["school projects"][project].description);
-		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects["school projects"][project].images);
+	for (project in projects.projects) {
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 		$(".project-entry:last").append(formattedProjectTitle);
 		$(".project-entry:last").append(formattedProjectDates);
 		$(".project-entry:last").append(formattedProjectDescription);
@@ -214,8 +210,8 @@ bio.display = function() {
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-	var formattedPicURL = HTMLbioPic.replace("%data%", bio["picture URL"]);
-	var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio["welcome message"]);
+	var formattedPicURL = HTMLbioPic.replace("%data%", bio.biopic);
+	var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 	$("#topContacts").prepend(formattedLocation);
 	$("#topContacts").prepend(formattedTwitter);
